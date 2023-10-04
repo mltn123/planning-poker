@@ -1,7 +1,7 @@
 :root {
-  --accent: hsl(180, 40%, 29%);
+  --accent: hsl(0, 91%, 38%);
   --background: hsl(0, 0%, 100%);
-  --highlight: hsl(180, 67%, 37%);
+  --highlight: hsl(0, 89%, 11%);
   --muted-text: hsl(0, 0%, 37%);
   --text: hsl(0, 0%, 17%);
 }

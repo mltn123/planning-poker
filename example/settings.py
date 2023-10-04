@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'channels',
     'planning_poker.apps.ChannelsPresenceConfig',
     'planning_poker',
+    'encrypted_fields',
+    'planning_poker_jira'
 )
 
 MIDDLEWARE = [
@@ -96,5 +98,15 @@ CHANNEL_LAYERS = {
     }
 }
 
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("localhost", 6379)],
+#         },
+#     },
+# }
 LOGIN_URL = 'admin:login'
 LOGOUT_URL = 'admin:logout'
+
+FIELD_ENCRYPTION_KEYS = [SECRET_KEY.encode().hex()[:64]]

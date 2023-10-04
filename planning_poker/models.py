@@ -5,7 +5,7 @@ from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from .constants import ALL_VOTING_OPTIONS, FIBONACCI_CHOICES
+from .constants import ALL_VOTING_OPTIONS, FIBONACCI_CHOICES , HOUR_CHOICES
 
 try:
     # The OrderedDict was added to the typing module in Python version 3.7.
@@ -52,7 +52,7 @@ class Story(models.Model):
         help_text=_('The amount of points this story takes up in the sprint'),
         null=True,
         blank=True,
-        choices=[(None, '-')] + [(int(number), label) for number, label in FIBONACCI_CHOICES]
+        choices=[(None, '-')] + [(int(number), label) for number, label in HOUR_CHOICES]
     )
     #: The poker session to which this story belongs to.
     poker_session = models.ForeignKey(

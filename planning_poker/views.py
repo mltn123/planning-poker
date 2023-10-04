@@ -7,7 +7,7 @@ from django.db.models import Count, Q
 from django.shortcuts import resolve_url
 from django.views.generic import DetailView, ListView
 
-from .constants import FIBONACCI_CHOICES, NON_POINT_OPTIONS
+from .constants import FIBONACCI_CHOICES, NON_POINT_OPTIONS, HOUR_CHOICES
 from .models import PokerSession
 
 
@@ -41,7 +41,7 @@ class PokerSessionView(LoginLogoutMixin, DetailView):
     def get_context_data(self, **kwargs) -> Dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context['options'] = {
-            'point_options': [list(choice) for choice in FIBONACCI_CHOICES],
+            'point_options': [list(choice) for choice in HOUR_CHOICES],
             'non_point_options': [list(choice) for choice in NON_POINT_OPTIONS]
         }
         context['stories'] = [
