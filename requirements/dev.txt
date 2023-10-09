@@ -5,6 +5,8 @@
 #    pip-compile --output-file=dev.txt dev.in
 #
 
+
+python-keyczar
 django-encrypted-fields
 wheel==0.41.0
 whitenoise==6.2.0
